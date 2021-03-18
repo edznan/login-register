@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/usericon.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container d-flex justify-items-center align-items-center">
+        <div class="card-container px-1 py-4 mx-auto">
+            <!-- login form -->
+            <div id="loginForm" class="d-block">
+                <form class="card shadow p-4 bg-dark text-light">
+                    <div class="text-center w-100 icon-container">
+                        <i class="text-dark shadow bg-light fs-1 bi bi-lock"></i>
+                    </div>
+                    <div class="form-floating m-4 mx-3 text-dark">
+                        <input type="email" class="form-control" id="loginEmail" placeholder="email">
+                        <label for="loginEmail">Email</label>
+                        <div id="loginEmailHint"></div>
+                    </div>
+                    <div class="form-floating mx-3 mb-4 text-dark">
+                        <input type="password" class="form-control" id="loginPassword" placeholder="password">
+                        <label for="loginPassword" class="form-label">Password</label>
+                        <div id="loginPasswordHint" class="form-text"></div>
+                    </div>
+                    <div class="mx-3 mb-4 form-check">
+                        <input type="checkbox" class="form-check-input" id="loginCheckbox">
+                        <label class="form-check-label" for="loginCheckbox">Remember me</label>
+                    </div>
+                    <div class="d-grid gap-2 mx-3 mb-4">
+                        <button type="submit" id="loginBtn" class="btn btn-secondary btn-block">Login</button>
+                    </div>
+                    <br>
+                    <div class="w-100 text-end px-2">
+                        <button id="forgotPassword" class="btn text-light">
+                            Forgot password?
+                        </button>
+                    </div>
+                </form>
+            </div>
+            <!-- register form -->
+            <div id="registerForm" class="d-none">
+                <form class="card shadow p-4 bg-dark text-light">
+                    <div class="text-center w-100 icon-container">
+                        <i class="text-dark shadow bg-light fs-1 bi bi-person-plus"></i>
+                    </div>
+                    <div class="form-floating mb-4 mx-3 text-dark">
+                        <input type="text" class="form-control" id="firstName" placeholder="first name">
+                        <label for="firstName">First name</label>
+                        <div id="firstNameHint"></div>
+                    </div>
+                    <div class="form-floating mx-3 mb-4 text-dark">
+                        <input type="text" class="form-control" id="lastName" placeholder="last name">
+                        <label for="lastName">Last name</label>
+                        <div id="lastNameHint"></div>
+                    </div>
+                    <div class="form-floating mx-3 mb-4 text-dark">
+                        <input type="email" class="form-control" id="registerEmail" placeholder="email">
+                        <label for="registerEmail" class="form-label">Email</label>
+                        <div id="registerEmailHint" class="form-text"></div>
+                    </div>
+                    <div class="form-floating mx-3 mb-4 text-dark">
+                        <input type="password" class="form-control" id="registerPassword" placeholder="password">
+                        <label for="registerPassword" class="form-label">Password</label>
+                        <div id="registerPasswordHint" class="form-text"></div>
+                    </div>
+                    <div class="form-floating mx-3 mb-4 text-dark">
+                        <input type="password" class="form-control" id="repeatPassword" placeholder="repeat password">
+                        <label for="repeatPassword" class="form-label">Repeat password</label>
+                        <div id="repeatPasswordHint" class="form-text"></div>
+                    </div>
+                    <div class="d-grid gap-2 mx-3 mb-4">
+                        <button type="submit" id="registerBtn" class="btn btn-secondary btn-block">Register</button>
+                    </div>
+                </form>
+            </div>
+            <br>
+            <p class="text-dark text-center"><span id="formToggleText"></span> <b id="formToggle"></b></p>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
