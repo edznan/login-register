@@ -16,69 +16,71 @@
     <div class="container d-flex justify-items-center align-items-center">
         <div class="card-container px-1 py-4 mx-auto">
             <!-- login form -->
-            <div id="loginForm" class="d-block">
-                <form class="card shadow p-4 bg-dark text-light">
+            <div id="loginFormContainer" class="d-block">
+                <form id="loginForm" class="card shadow p-4 bg-dark text-light needs-validation" novalidate>
                     <div class="text-center w-100 icon-container">
                         <i class="text-dark shadow bg-light fs-1 bi bi-lock"></i>
                     </div>
                     <div class="form-floating m-4 mx-3 text-dark">
-                        <input type="email" class="form-control" id="loginEmail" placeholder="email">
+                        <input type="email" class="form-control" id="loginEmail" placeholder="email" required>
                         <label for="loginEmail">Email</label>
                         <div id="loginEmailHint"></div>
                     </div>
                     <div class="form-floating mx-3 mb-4 text-dark">
-                        <input type="password" class="form-control" id="loginPassword" placeholder="password">
+                        <input type="password" class="form-control" id="loginPassword" placeholder="password" required>
                         <label for="loginPassword" class="form-label">Password</label>
                         <div id="loginPasswordHint" class="form-text"></div>
                     </div>
                     <div class="mx-3 mb-4 form-check">
                         <input type="checkbox" class="form-check-input" id="loginCheckbox">
-                        <label class="form-check-label" for="loginCheckbox">Remember me</label>
+                        <label class="form-check-label text-light" for="loginCheckbox">Remember me</label>
                     </div>
                     <div class="d-grid gap-2 mx-3 mb-4">
-                        <button type="submit" id="loginBtn" class="btn btn-secondary btn-block">Login</button>
+                        <button type="submit" class="btn btn-secondary btn-block">Login</button>
                     </div>
                     <br>
                     <div class="w-100 text-end px-2">
-                        <button id="forgotPassword" class="btn text-light">
+                        <button id="forgotPswd" class="btn text-light">
                             Forgot password?
                         </button>
                     </div>
                 </form>
             </div>
             <!-- register form -->
-            <div id="registerForm" class="d-none">
-                <form class="card shadow p-4 bg-dark text-light">
+            <div id="registerFormContainer" class="d-none">
+                <form id="registerForm" class="card shadow p-4 bg-dark text-light needs-validation" novalidate>
                     <div class="text-center w-100 icon-container">
                         <i class="text-dark shadow bg-light fs-1 bi bi-person-plus"></i>
                     </div>
                     <div class="form-floating mb-4 mx-3 text-dark">
-                        <input type="text" class="form-control" id="firstName" placeholder="first name">
+                        <input type="text" class="form-control" id="firstName" placeholder="first name" required>
                         <label for="firstName">First name</label>
                         <div id="firstNameHint"></div>
                     </div>
                     <div class="form-floating mx-3 mb-4 text-dark">
-                        <input type="text" class="form-control" id="lastName" placeholder="last name">
+                        <input type="text" class="form-control" id="lastName" placeholder="last name" required>
                         <label for="lastName">Last name</label>
                         <div id="lastNameHint"></div>
                     </div>
                     <div class="form-floating mx-3 mb-4 text-dark">
-                        <input type="email" class="form-control" id="registerEmail" placeholder="email">
+                        <input type="email" class="form-control" id="registerEmail" placeholder="email" required>
                         <label for="registerEmail" class="form-label">Email</label>
                         <div id="registerEmailHint" class="form-text"></div>
                     </div>
                     <div class="form-floating mx-3 mb-4 text-dark">
-                        <input type="password" class="form-control" id="registerPassword" placeholder="password">
+                        <input type="password" class="form-control" id="registerPassword" placeholder="password"
+                            required>
                         <label for="registerPassword" class="form-label">Password</label>
                         <div id="registerPasswordHint" class="form-text"></div>
                     </div>
                     <div class="form-floating mx-3 mb-4 text-dark">
-                        <input type="password" class="form-control" id="repeatPassword" placeholder="repeat password">
+                        <input type="password" class="form-control" id="repeatPassword" placeholder="repeat password"
+                            required>
                         <label for="repeatPassword" class="form-label">Repeat password</label>
                         <div id="repeatPasswordHint" class="form-text"></div>
                     </div>
                     <div class="d-grid gap-2 mx-3 mb-4">
-                        <button type="submit" id="registerBtn" class="btn btn-secondary btn-block">Register</button>
+                        <button type="submit" class="btn btn-secondary btn-block">Register</button>
                     </div>
                 </form>
             </div>
@@ -86,8 +88,28 @@
             <p class="text-dark text-center"><span id="formToggleText"></span> <b id="formToggle"></b></p>
         </div>
     </div>
+    <!-- toasts -->
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous">
+    </script>
+    <script>
+        (function () {
+            'use strict'
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            let forms = document.querySelectorAll('.needs-validation')
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+                    }, false)
+                })
+        })()
     </script>
     <script src="js/script.js"></script>
 </body>
